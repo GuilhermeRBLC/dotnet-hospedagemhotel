@@ -19,7 +19,7 @@ namespace DesafioHospedagemHotel.View
                 if(comand == 1) {
                     SuiteMenuView.SuiteMenu(suites);
                 } else if (comand == 2) {
-                    ReservaMenuView.ReservaMenu(reservas);
+                    ReservaMenuView.ReservaMenu(suites, reservas);
                 } else if (comand == 3) {
                     Console.WriteLine("Encerrando o sistema!");
                     break;

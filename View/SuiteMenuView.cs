@@ -7,11 +7,20 @@ namespace DesafioHospedagemHotel.View
 
         public static void SuiteMenuListarSuite(List<Suite> suites) {
             int inicioListagem = 0;
-            int finalListagem = suites.Count < 10 ? suites.Count : 10;
+            int finalListagem = suites.Count < 5 ? suites.Count : 5;
 
             Console.WriteLine("<< LISTAGEM DE SUITE >>");
 
+            int option = 0;
+
             do {
+
+                if(option == 1) {
+                    inicioListagem = finalListagem;
+                    finalListagem = finalListagem + 5 > suites.Count? suites.Count : finalListagem + 5;
+                } else if(option == 2) {
+                    break;
+                }
 
                 for (int i = inicioListagem; i < finalListagem; i++)
                 {
@@ -23,13 +32,7 @@ namespace DesafioHospedagemHotel.View
                 }
 
                 if(finalListagem < suites.Count) {
-                    int option = Tools.MenuOptions(new string[] { "1 - Listar Mais 10 items", "2 - Sair" });
-                    if(option == 1) {
-                        inicioListagem = finalListagem;
-                        finalListagem = finalListagem + 10 > suites.Count? suites.Count : finalListagem + 10;
-                    } else {
-                        break;
-                    }
+                    option = Tools.MenuOptions(new string[] { "1 - Listar Mais 5 items", "2 - Sair" });
                 }
 
             } while(finalListagem < suites.Count);

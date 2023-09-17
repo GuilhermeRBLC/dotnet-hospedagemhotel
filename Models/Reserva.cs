@@ -15,7 +15,9 @@ namespace DesafioHospedagemHotel.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
         {
-            if (this.Suite.Capacidade <= hospedes.Count)
+            Console.WriteLine($"Capacidade: {this.Suite.Capacidade}");
+            Console.WriteLine($"Count: {hospedes.Count}");
+            if (this.Suite.Capacidade >= hospedes.Count)
             {
                 Hospedes = hospedes;
             }
